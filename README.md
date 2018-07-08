@@ -168,8 +168,31 @@ ReactDOM.render(
     </select>
   ```
 
-## Lifecycle Methods 
-- **componentDidMount()**: runs after the component output has been rendered to the DOM 
-
-
 ## Refs 
+- a direct reference to a DOM element (use sparingly)
+  ```javascript
+    // callback has access to the dom element 
+    <input ref={(input) => this.inputText = input} />
+
+    // to get access to the DOM element 
+    this.inputText
+
+    // can retrieve the value, manipulate focus, etc.
+    this.inputText.value
+    this.inputText.focus()
+  ```
+
+## Lifecycle Methods 
+- **mounting**: when the component is first rendered to the DOM 
+1.  **constructor()**: runs first 
+2.  **componentWillMount()**:  executes after constructor is finished and before the markup has been rendered (only runs once in the component's lifetime)
+3.  **render()**: renders HTML to the DOM
+4.  **componentDidMount()**: after markup has been placed in the DOM.  Only runs once in the component's lifetime.
+
+### Updates Component:
+- **componentWIllRecieveProps(nextProps)**
+- **shouldComponentUpdate(nextProps, nextState)**
+- **componentWillUpdate(nextProps, nextState)**
+- **componentDidUpdate(prevProps, prevState)**
+
+- **forceUpdate(callback)**
