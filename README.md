@@ -195,4 +195,7 @@ ReactDOM.render(
 - **componentWillUpdate(nextProps, nextState)**
 - **componentDidUpdate(prevProps, prevState)**
 
+### Other:
 - **forceUpdate(callback)**
+- **componentWillUnmount()**
+- **componentDidMount()**
