@@ -1,0 +1,22 @@
+.searchForm {
+    margin-top: 30px;
+    text-align: center;
+}
+input {
+    background: none;
+    border: none;
+    font-size: 14pt;
+}
+
+input::placeholder {
+    text-align: center;
+    color: rgb(204, 204, 204);
+}
+.searchForm input {
+    outline: none;
+    font-size: 16pt;
+    border-bottom: 4px solid grey;
+}
+.searchForm input:focus {
+    border-bottom: 4px solid #dd9292;
+}

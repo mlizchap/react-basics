@@ -1,0 +1,19 @@
+.title {
+    font-size: 12pt;
+    padding: 10px;
+}
+img {
+    padding-bottom: 10px;
+}
+.year {
+    font-size: 10pt;
+}
+.movieCard {
+    background: #f5f2ec;
+    width: 400px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+}
