@@ -4,16 +4,17 @@
 }
 img {
     padding-bottom: 10px;
+    box-shadow: -.5px 1px 20px 0px rgba(0,0,0,0.50);
+
 }
 .year {
     font-size: 10pt;
 }
 .movieCard {
-    background: #f5f2ec;
-    width: 400px;
+    width: 300px;
     text-align: center;
     border-radius: 5px;
-    margin-right: auto;
-    margin-left: auto;
     margin-bottom: 25px;
+    margin-top: 10px;
+    display: inline-block;
 }

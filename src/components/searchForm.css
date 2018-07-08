@@ -15,8 +15,8 @@ input::placeholder {
 .searchForm input {
     outline: none;
     font-size: 16pt;
-    border-bottom: 4px solid grey;
+    border-bottom: 2px solid grey;
 }
 .searchForm input:focus {
-    border-bottom: 4px solid #dd9292;
+    border-bottom: 2px solid #dd9292;
 }
