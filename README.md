@@ -248,7 +248,7 @@ ReactDOM.render(
 - componentWillRecieveProps(nextProps)
 - componentWillUpdate 
 
-## React.Component Classes 
+## React.Component Properties  
 
 #### defaultProps
 - a class property of component 
