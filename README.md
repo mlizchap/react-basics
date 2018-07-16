@@ -86,6 +86,19 @@ ReactDOM.render(
     <h1>{this.state.something}</h1>
     ```
 - **asynchronous state**: because `this.props` and `this.state` may be updated asynchronously, you should 
+
+### setState
+- a react.Component method that changes a componemt's state
+  `this.setState(updater, callback)`
+  - `updater`: can be a object or a function
+  - `callback`: optional, runs after setState is completed and the component is rendered
+- updater as a function:
+  ```javascript
+  this.setState((prevState, props) => {
+    return { counter: prevState.counter + props.step }
+  })
+  ```
+
 ## Events
 - events in React are similar to handling events on DOM elements, except:
   - React events are named in camelCase
@@ -182,20 +195,76 @@ ReactDOM.render(
     this.inputText.focus()
   ```
 
-## Lifecycle Methods 
-- **mounting**: when the component is first rendered to the DOM 
-1.  **constructor()**: runs first 
-2.  **componentWillMount()**:  executes after constructor is finished and before the markup has been rendered (only runs once in the component's lifetime)
-3.  **render()**: renders HTML to the DOM
-4.  **componentDidMount()**: after markup has been placed in the DOM.  Only runs once in the component's lifetime.
+## React.Component Methods 
 
-### Updates Component:
-- **componentWIllRecieveProps(nextProps)**
-- **shouldComponentUpdate(nextProps, nextState)**
-- **componentWillUpdate(nextProps, nextState)**
-- **componentDidUpdate(prevProps, prevState)**
+### Lifecycle Methods (current)
+- methods React calls for you
 
-### Other:
-- **forceUpdate(callback)**
-- **componentWillUnmount()**
-- **componentDidMount()**
+#### Render 
+- only required method
+- should **not** modify the component's state, should be pure and return the same results each time.  
+- not invoked when `shouldComponentUpdate()` returns false 
+
+#### Constructor 
+- the purpose is to set the state and bind methods 
+- called before mounting 
+
+#### ComponentDidMount 
+- invoked immediately after a component is mounted.  
+- a good place for loading data
+- by the time its called, the component has rendered at least once 
+
+#### ComponentDidUpdate(prevProps, prevState, snapshot)
+- an opportunity to render to the DOM after the component has been rendered 
+- called after all the children have been updated.  The last thing to be executed.
+- ex: an app that collects input data from the user and then updates data to the DB. 
+
+#### componentWillUnmount
+- invoked immediately before a component is updated and destroyed.
+- used for cleanup - invalidating timers, canceling requests or cleaning up subscriptions
+
+#### shouldComponentUpdate 
+- by default this method re-renders after every state change
+- can compare the current state/props to nextState and nextProps, can return false to say that the update can be stopped
+
+#### getDerivedStateFromProps
+- invoked right before calling the render method on initial mount and subsequent updates
+- returns an object to update state or null to not update anything 
+
+#### getSnapShotBeforeUpdate 
+- invoked right before the most recently rendered output is commited to the DOM - allows your component to capture some information from the DOM
+- the value will be passed as a param to componentDidUpdate 
+
+#### componentDidCatch(error, info)
+- catches JS errors anywhere in their child component tree, log these errors and displays a fallback UI instad of a component tree that crashed 
+
+### Legacy Lifecycle Methods 
+- componentWillMount
+- componentWillRecieveProps(nextProps)
+- componentWillUpdate 
+
+#### Forceupdate
+- a react.Component method
+- by default a component rerenders when the state or props change, this causes `render()` to be called explicitely 
+- use sparingly
+
+#### defaultProps
+- a class property of component 
+- sets default props for the class 
+  ```javascript
+  class CustomButton extends React.Componet {
+    //...
+  }
+  CustomButtton.defaultProps = {
+    color: 'blue'
+  }
+
+  render() {
+    return <CustomBttton /> // props.color is set to blue 
+  }
+  ```
+
+  #### displayName 
+  - a class property of component 
+  - does not need to be set explicitely, it is inferred from the function or class that defines a component 
+  - reasons for changing - debugging purposes or when creating a high order component 
