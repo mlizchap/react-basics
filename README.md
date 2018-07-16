@@ -243,6 +243,8 @@ ReactDOM.render(
 - componentWillRecieveProps(nextProps)
 - componentWillUpdate 
 
+## React.Component Classes 
+
 #### Forceupdate
 - a react.Component method
 - by default a component rerenders when the state or props change, this causes `render()` to be called explicitely 
@@ -264,7 +266,7 @@ ReactDOM.render(
   }
   ```
 
-  #### displayName 
-  - a class property of component 
-  - does not need to be set explicitely, it is inferred from the function or class that defines a component 
-  - reasons for changing - debugging purposes or when creating a high order component 
+#### displayName 
+- a class property of component 
+- does not need to be set explicitely, it is inferred from the function or class that defines a component 
+- reasons for changing - debugging purposes or when creating a high order component 
