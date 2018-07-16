@@ -195,6 +195,11 @@ ReactDOM.render(
     this.inputText.focus()
   ```
 
+#### Forceupdate
+- a react.Component method
+- by default a component rerenders when the state or props change, this causes `render()` to be called explicitely 
+- use sparingly
+
 ## React.Component Methods 
 
 ### Lifecycle Methods (current)
@@ -244,11 +249,6 @@ ReactDOM.render(
 - componentWillUpdate 
 
 ## React.Component Classes 
-
-#### Forceupdate
-- a react.Component method
-- by default a component rerenders when the state or props change, this causes `render()` to be called explicitely 
-- use sparingly
 
 #### defaultProps
 - a class property of component 
