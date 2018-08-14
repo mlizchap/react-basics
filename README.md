@@ -18,7 +18,7 @@
 - [Refs]
 - [Lifecycle Methods]
 
-## Setup <span id="setup"></span>
+## Setup<span id="setup"></span>
 - to start:
   `create-react-app <app-name>`
   
