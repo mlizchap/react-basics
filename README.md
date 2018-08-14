@@ -86,9 +86,7 @@ ReactDOM.render(
   var props = { x: 1, y: 1, z:1 };
   <Component {...props} />
   ```
-<span id="defaultProps">  
-### defaultProps
-</span>
+### Default Props
 - a class property of component 
 - sets default props for the class 
   ```javascript
