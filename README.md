@@ -11,7 +11,7 @@
   - [Class Components](#class-components)
 - [Rendering Elements](#rendering)
 - [Props](#props)
-- [Default Props](#defaultProps)
+  - [Default Props](#defaultProps)
 - [State](#state)
   - [Changing State](#changing-state)
 - [Events](#events)
@@ -86,8 +86,9 @@ ReactDOM.render(
   var props = { x: 1, y: 1, z:1 };
   <Component {...props} />
   ```
-  
-<span id="defaultProps">### defaultProps</span>
+<span id="defaultProps">  
+### defaultProps
+</span>
 - a class property of component 
 - sets default props for the class 
   ```javascript
