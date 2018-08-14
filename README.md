@@ -11,7 +11,7 @@
   - [Class Components](#class-components)
 - [Rendering Elements](#rendering)
 - [Props](#props)
-  - [Default Props](#defaultProps)
+  - [Default Props](#default-props)
 - [State](#state)
   - [Changing State](#changing-state)
 - [Events](#events)
