@@ -2,6 +2,9 @@
 
 - to start:
   `create-react-app <app-name>`
+  
+## Examples
+[React Movie App](https://github.com/mlizchap/react-movie-app)
 
 ## JSX 
 - a syntax extension to javascript.  Used with react to descritbe what the UI should look like.  
