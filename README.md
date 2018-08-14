@@ -13,7 +13,7 @@
 - [Props](#props)
   - [Default Props](#default-props)
 - [State](#state)
-  - [Changing State](#setState)
+  - [setState](#setState)
 - [Events](#events)
 - [Forms](#forms)
 - [Refs](#refs)
