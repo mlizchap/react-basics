@@ -13,7 +13,7 @@
 - [Props](#props)
   - [Default Props](#default-props)
 - [State](#state)
-  - [setState](#setState)
+  - [setState](#setstate)
 - [Events](#events)
 - [Forms](#forms)
 - [Refs](#refs)
@@ -122,7 +122,7 @@ ReactDOM.render(
     ```
 - **asynchronous state**: because `this.props` and `this.state` may be updated asynchronously, you should 
 
-### setState<span id="setState"></span>
+### setState<span id="setstate"></span>
 - a react.Component method that changes a componemt's state
   `this.setState(updater, callback)`
   - `updater`: can be a object or a function
