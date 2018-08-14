@@ -5,30 +5,31 @@
 
 ## Toc
 - [Setup](#setup)
-- [Components]
-  - [Functional Components]
-  - [Class Components]
-- [Rendering Elements]
-- [Props]
-  - [Default Props]
-- [State]
-  - [Changing State]
-- [Events]
-- [Forms]
-- [Refs]
-- [Lifecycle Methods]
+- [JSX](#jsx)
+- [Components](#components)
+  - [Functional Components](#functional-components)
+  - [Class Components](#class-components)
+- [Rendering Elements](#rendering)
+- [Props](#props)
+  - [Default Props](#default-props)
+- [State])(#state)
+  - [Changing State](#changing-state)
+- [Events](#events)
+- [Forms](#forms)
+- [Refs](#refs)
+- [Lifecycle Methods](#lifecycle)
 
 ## Setup<span id="setup"></span>
 - to start:
   `create-react-app <app-name>`
   
-## JSX 
+## JSX<span id="jsx"></span>
 - a syntax extension to javascript.  Used with react to descritbe what the UI should look like.  
 - Babel compiles JSX down to `React.createElement()` calls
 
-## Components
+## Components<span id="components"></span>
 
-### Functional Components 
+### Functional Components<span id="functional-components"></span>
 - can accept props but cannot have state 
 ```javascript
 function Welcome(props) {
@@ -36,7 +37,7 @@ function Welcome(props) {
 }
 ```
 
-### Class Components
+### Class Components<span id="class-components"></span>
 - can have state plus some additional features
 ```javascript
 class Welcome extends Component {
@@ -46,7 +47,7 @@ class Welcome extends Component {
 }
 ```
 
-## Rendering Elements
+## Rendering Elements<span id="rendering"></span>
 ```javascript
 const element = <Welcome name="Sara" />;
 ReactDOM.render(
@@ -55,7 +56,7 @@ ReactDOM.render(
 );
 ```
 
-## Props 
+## Props<span id="props"></span>
 - an object that gives components the ability to receive data from the parent component; make components reusable 
 - to give a component props 
   ```javascript
@@ -86,7 +87,7 @@ ReactDOM.render(
   <Component {...props} />
   ```
   
-### defaultProps
+### defaultProps<span id="default-props"></span>
 - a class property of component 
 - sets default props for the class 
   ```javascript
@@ -102,7 +103,7 @@ ReactDOM.render(
   }
   ```
 
-## State
+## State<span id="state"></span>
 - an object that determines how a component renders and behaves 
 - (local) state: cannot be accessd outside of the component and can only be used and modified inside the component
 - when the state changes, the component re-renders
@@ -122,7 +123,7 @@ ReactDOM.render(
     ```
 - **asynchronous state**: because `this.props` and `this.state` may be updated asynchronously, you should 
 
-### setState
+### setState<span id="changing-state"></span>
 - a react.Component method that changes a componemt's state
   `this.setState(updater, callback)`
   - `updater`: can be a object or a function
@@ -134,7 +135,7 @@ ReactDOM.render(
   })
   ```
 
-## Events
+## Events<span id="events"></span>
 - events in React are similar to handling events on DOM elements, except:
   - React events are named in camelCase
   - With JSX you pass a function as the event handler rather than a string
@@ -166,7 +167,7 @@ ReactDOM.render(
   <button onClick={(e) => this.handleClick(e)}>
   ```
 
-## Forms
+## Forms<span id="forms"></span>
 - in DOM elements, form keep some internal state.  
 - In React we should use `controlled components`
   - by default `<input>`, `<textarea>` and `<select>` maintain their own state based on user input.  In react, state should only be updated with `setState()`.  We alsways want to make the value of our elements equals to the components appropriate state for that value.
@@ -216,7 +217,7 @@ ReactDOM.render(
     </select>
   ```
 
-## Refs 
+## Refs<span id="refs"></span>
 - a direct reference to a DOM element (use sparingly)
   ```javascript
     // callback has access to the dom element 
@@ -237,7 +238,7 @@ ReactDOM.render(
 
 ## React.Component Methods 
 
-### Lifecycle Methods (current)
+### Lifecycle Methods (current)<span id="lifecycle"></span>
 - methods React calls for you
 
 #### Render 
