@@ -1,11 +1,27 @@
 # React-Basics
 
-- to start:
-  `create-react-app <app-name>`
-  
 ## Examples
 [React Movie App](https://github.com/mlizchap/react-movie-app)
 
+## Toc
+- [Setup](#setup)
+- [Components]
+  - [Functional Components]
+  - [Class Components]
+- [Rendering Elements]
+- [Props]
+  - [Default Props]
+- [State]
+  - [Changing State]
+- [Events]
+- [Forms]
+- [Refs]
+- [Lifecycle Methods]
+
+## Setup <span id="setup"></span>
+- to start:
+  `create-react-app <app-name>`
+  
 ## JSX 
 - a syntax extension to javascript.  Used with react to descritbe what the UI should look like.  
 - Babel compiles JSX down to `React.createElement()` calls
@@ -68,6 +84,22 @@ ReactDOM.render(
   ```javascript
   var props = { x: 1, y: 1, z:1 };
   <Component {...props} />
+  ```
+  
+### defaultProps
+- a class property of component 
+- sets default props for the class 
+  ```javascript
+  class CustomButton extends React.Componet {
+    //...
+  }
+  CustomButtton.defaultProps = {
+    color: 'blue'
+  }
+
+  render() {
+    return <CustomBttton /> // props.color is set to blue 
+  }
   ```
 
 ## State
@@ -251,25 +283,4 @@ ReactDOM.render(
 - componentWillRecieveProps(nextProps)
 - componentWillUpdate 
 
-## React.Component Properties  
 
-#### defaultProps
-- a class property of component 
-- sets default props for the class 
-  ```javascript
-  class CustomButton extends React.Componet {
-    //...
-  }
-  CustomButtton.defaultProps = {
-    color: 'blue'
-  }
-
-  render() {
-    return <CustomBttton /> // props.color is set to blue 
-  }
-  ```
-
-#### displayName 
-- a class property of component 
-- does not need to be set explicitely, it is inferred from the function or class that defines a component 
-- reasons for changing - debugging purposes or when creating a high order component 
