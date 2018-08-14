@@ -12,7 +12,7 @@
 - [Rendering Elements](#rendering)
 - [Props](#props)
   - [Default Props](#default-props)
-- [State])(#state)
+- [State](#state)
   - [Changing State](#changing-state)
 - [Events](#events)
 - [Forms](#forms)
