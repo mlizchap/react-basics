@@ -1,8 +1,8 @@
 # React-Basics
 
 ## Examples
-[React Movie App](https://github.com/mlizchap/react-movie-app)
-[React Todo](https://github.com/mlizchap/react-todo)
+- [React Movie App](https://github.com/mlizchap/react-movie-app)
+- [React Todo](https://github.com/mlizchap/react-todo)
 
 ## Toc
 - [Setup](#setup)
