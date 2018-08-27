@@ -12,6 +12,7 @@
   - [Class Components](#class-components)
 - [Rendering Elements](#rendering)
 - [Props](#props)
+- [PropTypes](#proptypes)
 - [State](#state)
 - [Events](#events)
 - [Forms](#forms)
