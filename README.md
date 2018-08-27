@@ -100,6 +100,42 @@ ReactDOM.render(
     return <CustomBttton /> // props.color is set to blue 
   }
   ```
+## PropTypes 
+- checks if props are a certain type
+- install the propType library
+  ```javascript
+  $ npm install prop-types
+  ```
+  ```javascript
+  import PropTypes from 'prop-types';
+  ```
+- declare prop types of a function:
+  ```
+  class Greeting extends React.Component {
+    render() {
+      return (
+        <h1>Hello, {this.props.name}</h1>
+      );
+    }
+  }
+  Greeting.propTypes = {
+    name: PropTypes.string
+  };
+  - other prop types:
+  ```javascript
+  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,
+  ```
+- to make required: 
+  ```javascript
+  requiredFunc: PropTypes.func.isRequired,
+  ```
+- [for more information click here](https://reactjs.org/docs/typechecking-with-proptypes.html)
 
 ## State<span id="state"></span>
 - an object that determines how a component renders and behaves 
