@@ -255,17 +255,29 @@ ReactDOM.render(
 
 ## Refs<span id="refs"></span>
 - a direct reference to a DOM element (use sparingly)
+- creating a property
+```javascript
+constructor(props) {
+  super(props);
+  
+  this.input = React.createRef();
+}
+```
+- using callbacks:
   ```javascript
     // callback has access to the dom element 
     <input ref={(input) => this.inputText = input} />
-
-    // to get access to the DOM element 
-    this.inputText
-
-    // can retrieve the value, manipulate focus, etc.
-    this.inputText.value
-    this.inputText.focus()
   ```
+- to get access to the DOM element 
+  ```javascript
+  this.inputText
+  ```
+- can retrieve the value, manipulate focus, etc.
+  ```javascript
+  this.inputText.focus()
+  this.inputText.current.value // gets the current value
+  ```
+
 
 #### Forceupdate
 - a react.Component method
