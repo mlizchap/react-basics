@@ -111,7 +111,7 @@ ReactDOM.render(
   import PropTypes from 'prop-types';
   ```
 - declare prop types of a function:
-  ```
+  ```javascript
   class Greeting extends React.Component {
     render() {
       return (
@@ -122,7 +122,8 @@ ReactDOM.render(
   Greeting.propTypes = {
     name: PropTypes.string
   };
-  - other prop types:
+  ```
+ - other prop types:
   ```javascript
   optionalArray: PropTypes.array,
   optionalBool: PropTypes.bool,
