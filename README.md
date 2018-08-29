@@ -5,7 +5,7 @@
 - [React Todo](https://github.com/mlizchap/react-todo)
 
 ## Toc
-- [Setup](#setup)
+- [create-react-app](#create-react-app)
 - [JSX](#jsx)
 - [Components](#components)
   - [Functional Components](#functional-components)
@@ -19,10 +19,17 @@
 - [Refs](#refs)
 - [Lifecycle Methods](#lifecycle-methods)
 
-## Setup<span id="setup"></span>
+## create-react-app
 - to start:
   `create-react-app <app-name>`
-  
+- comes with built in functionality:
+<table>
+<tr><td>React</td><td>libraries for creating react componentents and rendering them</td></tr>
+<tr><td>webpack</td><td>links together js files</td></tr>
+<tr><td>jest</td><td>automated test runner</td></tr>
+</table>
+
+
 ## JSX<span id="jsx"></span>
 - a syntax extension to javascript.  Used with react to descritbe what the UI should look like.  
 - Babel compiles JSX down to `React.createElement()` calls
