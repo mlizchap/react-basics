@@ -17,6 +17,7 @@
 - [Events](#events)
 - [Forms](#forms)
 - [Refs](#refs)
+- [Conext](#context)
 - [Lifecycle Methods](#lifecycle-methods)
 
 ## create-react-app
@@ -284,8 +285,110 @@ constructor(props) {
   this.inputText.focus()
   this.inputText.current.value // gets the current value
   ```
+  
+## Context 
+- Normally data is passed from Parent to child via props.  This can get messy when the children props that need data from the parent are heavily nested. 
+- **Context API**:  can inject data at any level.  To do this you need a `Provider` and a `Consumer`
+1.  Make a new context
+- in `Provider.js`
+  ```javascript
+  export const MyContext = React.createContext();
+  ```
+2.  Create a Provider Component
+- in `Provider.js`
+  ```javascript
+  class MyProvider extends Component {
+      state = { name: 'jane'}
 
+      render() {
+          return (
+              <MyContext.Provider value={this.state.name}>
+                  {this.props.children}
+              </MyContext.Provider>
+          )
+      }
+  }
+  ```
+3. Import Provider and and wrap the Application in it
+- in `componentName.js`
+```javascript
+  import MyProvider, { MyContext } from './Provider';
 
+  export class App extends Component {
+      render() {
+          return (
+              <MyProvider>
+                  <MyContext.Consumer>
+                      {context => <div>{context}</div>}  // renders the name in the state ('jane')
+                  </MyContext.Consumer>
+              </MyProvider>
+          )
+      }
+  }
+```
+- can pass down functions (actions) to update the state 
+  - wrap the state and functions in an object, use `this.setState` to update state
+    ```javascript
+    <MyContext.Provider value={{
+        state: this.state,
+        makeCaps: () => this.setState({
+            name: this.state.name.toUpperCase() 
+        })
+    }}>
+        {this.props.children}
+    </MyContext.Provider>
+    ```
+  - access the state with `val.state` or `val.fnName` 
+    ```javascript
+    <MyProvider>
+        <MyContext.Consumer>
+            {val => {
+                return (
+                    <div>
+                        <div>Name: {val.state.name}</div>
+                        <button onClick={val.makeCaps}>MAKE CAPS</button>
+                    </div>
+                )
+            }}
+        </MyContext.Consumer>
+    </MyProvider>
+    ```
+- using userinput to change the state 
+  - in the provider, give arguments for the method that will update the state
+    ```javascript
+    <MyContext.Provider value={{
+        state: this.state,
+        changeName: (input) => this.setState({
+            name: input
+        })
+
+    }}>
+        {this.props.children}
+    </MyContext.Provider>
+  ```
+ - in the consumer, pass the user input as the arg
+   ```javascript
+   changeName = (e, context) => {
+      e.preventDefault();
+      console.log(this.state.val)
+      context.makeCaps()
+      context.changeName(this.state.val)    
+    }
+   
+    /* ... */
+    
+    <MyContext.Consumer>
+        {val => {
+            return (
+                <div>
+                    <form onSubmit={(e, context) => this.changeName(e, val)}>
+                        <input val={this.state.val} onChange={(e) => this.setState({ val: e.target.value})}/>
+                    </form>
+                </div>
+            )
+        }}
+    </MyContext.Consumer>
+   ```
 #### Forceupdate
 - a react.Component method
 - by default a component rerenders when the state or props change, this causes `render()` to be called explicitely 
