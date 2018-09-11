@@ -309,8 +309,8 @@ constructor(props) {
       }
   }
   ```
-3. Import Provider and and wrap the Application in it, whenever the provider updates, its child components will also update
-- in `componentName.js`
+3. **Set up the Provider**: Import Provider and and wrap the Application in it, whenever the provider updates, its child components will also update
+- in `App.js`
   ```javascript
     import MyProvider from './Provider';
 
@@ -324,14 +324,15 @@ constructor(props) {
         }
     }
   ```
-4.  **Pass data to components with the consumer** whenever a component needs data from the provider, user the `contextName.Consumer` as a parent compnent, using the context that the Consumer component returns, render the component and use the `context` to grab data from the provider
-  ```javascript
-  import {MyContext} from './Provider';
-  
-  <MyContext.Consumer>
-    {context => <div>{context}</div>}
-  </MyContext.Consumer>
-  ```
+4.  **Setup the consumer to pass data** whenever a component needs data from the provider, user the `contextName.Consumer` as a parent compnent, using the context that the Consumer component returns, render the component and use the `context` to grab data from the provider
+- in `componentName.js`
+    ```javascript
+    import {MyContext} from './Provider';
+
+    <MyContext.Consumer>
+      {context => <div>{context}</div>}
+    </MyContext.Consumer>
+    ```
 
 - can pass down functions (actions) to update the state 
   - wrap the state and functions in an object, use `this.setState` to update state
