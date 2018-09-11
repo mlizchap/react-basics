@@ -17,7 +17,7 @@
 - [Events](#events)
 - [Forms](#forms)
 - [Refs](#refs)
-- [Conext](#context)
+- [Context](#context)
 - [Lifecycle Methods](#lifecycle-methods)
 
 ## create-react-app
