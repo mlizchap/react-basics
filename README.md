@@ -310,7 +310,7 @@ constructor(props) {
   }
   ```
 3. **Set up the Provider**: Import Provider and and wrap the Application in it, whenever the provider updates, its child components will also update
-- in `App.js`
+- in `index.js`
   ```javascript
     import MyProvider from './Provider';
 
