@@ -311,21 +311,21 @@ constructor(props) {
   ```
 3. Import Provider and and wrap the Application in it
 - in `componentName.js`
-```javascript
-  import MyProvider, { MyContext } from './Provider';
+  ```javascript
+    import MyProvider, { MyContext } from './Provider';
 
-  export class App extends Component {
-      render() {
-          return (
-              <MyProvider>
-                  <MyContext.Consumer>
-                      {context => <div>{context}</div>}  // renders the name in the state ('jane')
-                  </MyContext.Consumer>
-              </MyProvider>
-          )
-      }
-  }
-```
+    export class App extends Component {
+        render() {
+            return (
+                <MyProvider>
+                    <MyContext.Consumer>
+                        {context => <div>{context}</div>}  // renders the name in the state ('jane')
+                    </MyContext.Consumer>
+                </MyProvider>
+            )
+        }
+    }
+  ```
 - can pass down functions (actions) to update the state 
   - wrap the state and functions in an object, use `this.setState` to update state
     ```javascript
