@@ -324,7 +324,7 @@ constructor(props) {
         }
     }
   ```
-- whenever a component needs data from the provider, user the `contextName.Consumer` as a parent compnent, using the context that the Consumer component returns, render the component and use the `context` to grab data from the provider
+4.  **Pass data to components with the consumer** whenever a component needs data from the provider, user the `contextName.Consumer` as a parent compnent, using the context that the Consumer component returns, render the component and use the `context` to grab data from the provider
   ```javascript
   import {MyContext} from './Provider';
   
